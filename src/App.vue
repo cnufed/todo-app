@@ -1,28 +1,22 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+  <div>
+    <h1>{{name}}</h1>
+    <h2 :title="name">test</h2>
+    <Todo />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+import Todo from './components/TodoList'
 export default {
-  name: 'app',
+  data() {
+      return {
+        name: "Sandip"
+      };
+  },
   components: {
-    HelloWorld
+    // Add a reference to the TodoList component in the components property
+    Todo
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
